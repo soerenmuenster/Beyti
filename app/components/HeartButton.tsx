@@ -27,7 +27,7 @@ const HeartButton = ({ listingId, currentUser }: HeartButtonProps) => {
       <AiFillHeart
         size={24}
         className={`
-            ${hasFavorited ? "fill-rose-500" : "fill-neutral-500/70"}    
+            ${hasFavorited ? "fill-red-600" : "fill-neutral-500/70"}    
         `}
       />
     </div>

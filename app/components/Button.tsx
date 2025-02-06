@@ -29,15 +29,13 @@ const Button = ({
         hover:opacity-80
         transition
         w-full
-        ${
-          outline
-            ? "bg-white border-black text-black"
-            : "bg-rose-500 border-rose-500 text-white"
+        ${outline
+          ? "bg-white border-black text-black"
+          : "bg-red-600 border-red-600 text-white"
         }
-        ${
-          small
-            ? "py-1 text-sm font-light border"
-            : "py-3 text-md font-semibold border-2"
+        ${small
+          ? "py-1 text-sm font-light border"
+          : "py-3 text-md font-semibold border-2"
         }
     `}
       disabled={disabled}

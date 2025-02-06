@@ -52,11 +52,10 @@ const Input = ({
             disabled:opacity-70
             disabled:cursor-not-allowed 
             ${formatPrice ? "pl-9" : "pl-4"} 
-            ${
-              errors[id]
-                ? "border-rose-500 focus:border-rose-500"
-                : "border-neutral-300 focus:border-black"
-            }
+            ${errors[id]
+            ? "border-red-600 focus:border-red-600"
+            : "border-neutral-300 focus:border-black"
+          }
         `}
       />
       <label
@@ -75,7 +74,7 @@ const Input = ({
             peer-placeholder-shown:translate-y-0
             peer-focus:scale-75
             peer-focus:-translate-y-4
-            ${errors[id] ? "text-rose-500" : "text-zinc-400"}
+            ${errors[id] ? "text-red-600" : "text-zinc-400"}
         `}
       >
         {label}
