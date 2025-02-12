@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic"; // Forces dynamic rendering
+
+import { Suspense } from "react";
 import getCurrentUser from "../actions/getCurrentUser";
 import getListings from "../actions/getListings";
 import EmptyState from "../components/EmptyState";
@@ -21,7 +24,7 @@ const PropertiesPage = async () => {
     );
   }
 
-  return <PropertiesClient listings={listings} currentUser={currentUser} />;
+  return <Suspense><PropertiesClient listings={listings} currentUser={currentUser} /></Suspense>;
 };
 
 export default PropertiesPage;

@@ -12,7 +12,7 @@ import SearchModal from "./components/modals/SearchModal";
 const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Beytek Beyti",
+  title: "Beyti Beytek",
   description: "Free Syria <3",
 };
 

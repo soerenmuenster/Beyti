@@ -5,7 +5,7 @@ import { formatISO } from "date-fns";
 import dynamic from "next/dynamic";
 import { useRouter, useSearchParams } from "next/navigation";
 import qs from "query-string";
-import { useCallback, useMemo, useState } from "react";
+import { Suspense, useCallback, useMemo, useState } from "react";
 import { Range } from "react-date-range";
 import Heading from "../Heading";
 import Calendar from "../inputs/Calendar";
@@ -173,16 +173,18 @@ const SearchModal = (props: Props) => {
   }
 
   return (
-    <Modal
-      isOpen={searchModal.isOpen}
-      onClose={searchModal.onClose}
-      onSubmit={onSubmit}
-      title="Filters"
-      actionLabel={actionLabel}
-      secondaryActionLabel={secondaryActionLabel}
-      secondaryAction={step === STEPS.LOCATION ? undefined : onBack}
-      body={bodyContent}
-    />
+    <Suspense>
+      <Modal
+        isOpen={searchModal.isOpen}
+        onClose={searchModal.onClose}
+        onSubmit={onSubmit}
+        title="Filters"
+        actionLabel={actionLabel}
+        secondaryActionLabel={secondaryActionLabel}
+        secondaryAction={step === STEPS.LOCATION ? undefined : onBack}
+        body={bodyContent}
+      />
+    </Suspense>
   );
 };
 

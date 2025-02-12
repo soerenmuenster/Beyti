@@ -18,6 +18,7 @@ import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
 import CategoryBox from "../CategoryBox";
 import Container from "../Container";
 import { IoDiamond } from "react-icons/io5";
+import { Suspense } from "react";
 
 export const categories = [
   {
@@ -107,24 +108,26 @@ const Categories = () => {
   if (!isMainPage) return null;
 
   return (
-    <Container>
-      <div
-        className="
+    <Suspense>
+      <Container>
+        <div
+          className="
         pt-4
         flex
         flex-row
         items-center justify-between overflow-x-auto"
-      >
-        {categories.map((item) => (
-          <CategoryBox
-            key={item.label}
-            label={item.label}
-            selected={category === item.label}
-            icon={item.icon}
-          />
-        ))}
-      </div>
-    </Container>
+        >
+          {categories.map((item) => (
+            <CategoryBox
+              key={item.label}
+              label={item.label}
+              selected={category === item.label}
+              icon={item.icon}
+            />
+          ))}
+        </div>
+      </Container>
+    </Suspense>
   );
 };
 
